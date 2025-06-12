@@ -37,3 +37,9 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+android
+ios
+.cursor
+.idea
+.memory
+.vscode
