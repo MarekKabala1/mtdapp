@@ -1,6 +1,6 @@
-import { drizzle } from 'drizzle-orm/expo-sqlite';
-import * as SQLite from 'expo-sqlite';
+import { drizzle } from "drizzle-orm/expo-sqlite"
+import * as SQLite from "expo-sqlite"
 
-export const openMtdDb = SQLite.openDatabaseSync('mtd.db');
+export const openMtdDb = SQLite.openDatabaseSync("mtd.db")
 
-export const db = drizzle(openMtdDb);
+export const db = drizzle(openMtdDb)

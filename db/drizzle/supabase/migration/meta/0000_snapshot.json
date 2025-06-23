@@ -137,12 +137,8 @@
           "name": "app_settings_user_id_users_id_fk",
           "tableFrom": "app_settings",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -246,12 +242,8 @@
           "name": "bank_details_user_id_users_id_fk",
           "tableFrom": "bank_details",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -381,12 +373,8 @@
           "name": "business_details_user_id_users_id_fk",
           "tableFrom": "business_details",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -396,9 +384,7 @@
         "business_details_business_id_unique": {
           "name": "business_details_business_id_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "business_id"
-          ]
+          "columns": ["business_id"]
         }
       },
       "policies": {},
@@ -603,12 +589,8 @@
           "name": "clients_user_id_users_id_fk",
           "tableFrom": "clients",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -833,12 +815,8 @@
           "name": "expenses_user_id_users_id_fk",
           "tableFrom": "expenses",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -846,12 +824,8 @@
           "name": "expenses_business_id_business_details_business_id_fk",
           "tableFrom": "expenses",
           "tableTo": "business_details",
-          "columnsFrom": [
-            "business_id"
-          ],
-          "columnsTo": [
-            "business_id"
-          ],
+          "columnsFrom": ["business_id"],
+          "columnsTo": ["business_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -980,12 +954,8 @@
           "name": "file_attachments_user_id_users_id_fk",
           "tableFrom": "file_attachments",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -993,12 +963,8 @@
           "name": "file_attachments_invoice_id_invoices_id_fk",
           "tableFrom": "file_attachments",
           "tableTo": "invoices",
-          "columnsFrom": [
-            "invoice_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["invoice_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1006,12 +972,8 @@
           "name": "file_attachments_expense_id_expenses_id_fk",
           "tableFrom": "file_attachments",
           "tableTo": "expenses",
-          "columnsFrom": [
-            "expense_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["expense_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1019,12 +981,8 @@
           "name": "file_attachments_income_id_income_id_fk",
           "tableFrom": "file_attachments",
           "tableTo": "income",
-          "columnsFrom": [
-            "income_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["income_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1264,12 +1222,8 @@
           "name": "income_user_id_users_id_fk",
           "tableFrom": "income",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1277,12 +1231,8 @@
           "name": "income_business_id_business_details_business_id_fk",
           "tableFrom": "income",
           "tableTo": "business_details",
-          "columnsFrom": [
-            "business_id"
-          ],
-          "columnsTo": [
-            "business_id"
-          ],
+          "columnsFrom": ["business_id"],
+          "columnsTo": ["business_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1290,12 +1240,8 @@
           "name": "income_invoice_id_invoices_id_fk",
           "tableFrom": "income",
           "tableTo": "invoices",
-          "columnsFrom": [
-            "invoice_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["invoice_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1557,12 +1503,8 @@
           "name": "income_tax_calculations_user_id_users_id_fk",
           "tableFrom": "income_tax_calculations",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1570,12 +1512,8 @@
           "name": "income_tax_calculations_business_id_business_details_business_id_fk",
           "tableFrom": "income_tax_calculations",
           "tableTo": "business_details",
-          "columnsFrom": [
-            "business_id"
-          ],
-          "columnsTo": [
-            "business_id"
-          ],
+          "columnsFrom": ["business_id"],
+          "columnsTo": ["business_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1826,12 +1764,8 @@
           "name": "invoices_user_id_users_id_fk",
           "tableFrom": "invoices",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -1839,12 +1773,8 @@
           "name": "invoices_client_id_clients_id_fk",
           "tableFrom": "invoices",
           "tableTo": "clients",
-          "columnsFrom": [
-            "client_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["client_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -1854,9 +1784,7 @@
         "invoices_invoice_number_unique": {
           "name": "invoices_invoice_number_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "invoice_number"
-          ]
+          "columns": ["invoice_number"]
         }
       },
       "policies": {},
@@ -2107,12 +2035,8 @@
           "name": "ni_contributions_user_id_users_id_fk",
           "tableFrom": "ni_contributions",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -2120,12 +2044,8 @@
           "name": "ni_contributions_business_id_business_details_business_id_fk",
           "tableFrom": "ni_contributions",
           "tableTo": "business_details",
-          "columnsFrom": [
-            "business_id"
-          ],
-          "columnsTo": [
-            "business_id"
-          ],
+          "columnsFrom": ["business_id"],
+          "columnsTo": ["business_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -2324,12 +2244,8 @@
           "name": "payments_on_account_user_id_users_id_fk",
           "tableFrom": "payments_on_account",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -2337,12 +2253,8 @@
           "name": "payments_on_account_business_id_business_details_business_id_fk",
           "tableFrom": "payments_on_account",
           "tableTo": "business_details",
-          "columnsFrom": [
-            "business_id"
-          ],
-          "columnsTo": [
-            "business_id"
-          ],
+          "columnsFrom": ["business_id"],
+          "columnsTo": ["business_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -2521,12 +2433,8 @@
           "name": "quarterly_submissions_user_id_users_id_fk",
           "tableFrom": "quarterly_submissions",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -2534,12 +2442,8 @@
           "name": "quarterly_submissions_business_id_business_details_business_id_fk",
           "tableFrom": "quarterly_submissions",
           "tableTo": "business_details",
-          "columnsFrom": [
-            "business_id"
-          ],
-          "columnsTo": [
-            "business_id"
-          ],
+          "columnsFrom": ["business_id"],
+          "columnsTo": ["business_id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -2706,9 +2610,7 @@
         "tax_rates_tax_year_unique": {
           "name": "tax_rates_tax_year_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "tax_year"
-          ]
+          "columns": ["tax_year"]
         }
       },
       "policies": {},
@@ -2845,12 +2747,8 @@
           "name": "transactions_user_id_users_id_fk",
           "tableFrom": "transactions",
           "tableTo": "users",
-          "columnsFrom": [
-            "user_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["user_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -2858,12 +2756,8 @@
           "name": "transactions_invoice_id_invoices_id_fk",
           "tableFrom": "transactions",
           "tableTo": "invoices",
-          "columnsFrom": [
-            "invoice_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["invoice_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -2871,12 +2765,8 @@
           "name": "transactions_expense_id_expenses_id_fk",
           "tableFrom": "transactions",
           "tableTo": "expenses",
-          "columnsFrom": [
-            "expense_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["expense_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         },
@@ -2884,12 +2774,8 @@
           "name": "transactions_income_id_income_id_fk",
           "tableFrom": "transactions",
           "tableTo": "income",
-          "columnsFrom": [
-            "income_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["income_id"],
+          "columnsTo": ["id"],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
@@ -3030,9 +2916,7 @@
         "users_email_unique": {
           "name": "users_email_unique",
           "nullsNotDistinct": false,
-          "columns": [
-            "email"
-          ]
+          "columns": ["email"]
         }
       },
       "policies": {},
@@ -3129,12 +3013,8 @@
           "name": "work_items_invoice_id_invoices_id_fk",
           "tableFrom": "work_items",
           "tableTo": "invoices",
-          "columnsFrom": [
-            "invoice_id"
-          ],
-          "columnsTo": [
-            "id"
-          ],
+          "columnsFrom": ["invoice_id"],
+          "columnsTo": ["id"],
           "onDelete": "cascade",
           "onUpdate": "no action"
         }
@@ -3150,20 +3030,12 @@
     "public.accounting_type": {
       "name": "accounting_type",
       "schema": "public",
-      "values": [
-        "CASH",
-        "ACCRUALS"
-      ]
+      "values": ["CASH", "ACCRUALS"]
     },
     "public.contribution_status": {
       "name": "contribution_status",
       "schema": "public",
-      "values": [
-        "calculated",
-        "submitted",
-        "paid",
-        "overdue"
-      ]
+      "values": ["calculated", "submitted", "paid", "overdue"]
     },
     "public.expense_category": {
       "name": "expense_category",
@@ -3201,42 +3073,22 @@
     "public.invoice_status": {
       "name": "invoice_status",
       "schema": "public",
-      "values": [
-        "draft",
-        "sent",
-        "paid",
-        "overdue",
-        "cancelled"
-      ]
+      "values": ["draft", "sent", "paid", "overdue", "cancelled"]
     },
     "public.payment_status": {
       "name": "payment_status",
       "schema": "public",
-      "values": [
-        "due",
-        "paid",
-        "overdue",
-        "reduced",
-        "cancelled"
-      ]
+      "values": ["due", "paid", "overdue", "reduced", "cancelled"]
     },
     "public.submission_status": {
       "name": "submission_status",
       "schema": "public",
-      "values": [
-        "draft",
-        "submitted",
-        "accepted",
-        "rejected"
-      ]
+      "values": ["draft", "submitted", "accepted", "rejected"]
     },
     "public.transaction_type": {
       "name": "transaction_type",
       "schema": "public",
-      "values": [
-        "income",
-        "expense"
-      ]
+      "values": ["income", "expense"]
     }
   },
   "schemas": {},

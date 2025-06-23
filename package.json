@@ -9,6 +9,8 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "expo lint",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
     "db:sqlite": "drizzle-kit generate --config=drizzle.config.sqlite.ts",
     "db:supabase": "drizzle-kit generate --config=drizzle.config.supabase.ts",
     "db:drop:sqlite": "drizzle-kit drop --config=drizzle.config.sqlite.ts",
