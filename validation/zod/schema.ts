@@ -1,11 +1,14 @@
-import { z } from 'zod';
+import { z } from "zod"
 
-
-const dateStringSchema = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional();
-const timestampSchema = z.string().optional();
-const positiveNumberSchema = z.number().min(0);
-const booleanIntSchema = z.union([z.literal(0), z.literal(1)]).transform(val => Boolean(val));
-
+const dateStringSchema = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/)
+  .optional()
+const timestampSchema = z.string().optional()
+const positiveNumberSchema = z.number().min(0)
+const booleanIntSchema = z
+  .union([z.literal(0), z.literal(1)])
+  .transform(val => Boolean(val))
 
 export const userSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -22,8 +25,7 @@ export const userSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 export const businessDetailsSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -36,14 +38,14 @@ export const businessDetailsSchema = z.object({
   addressCity: z.string().max(100).optional(),
   addressCounty: z.string().max(100).optional(),
   addressPostcode: z.string().max(20).optional(),
-  addressCountryCode: z.string().length(2).default('GB'),
+  addressCountryCode: z.string().length(2).default("GB"),
   startDate: dateStringSchema,
-  accountingType: z.enum(['CASH', 'ACCRUALS']).default('CASH'),
+  accountingType: z.enum(["CASH", "ACCRUALS"]).default("CASH"),
   createdAt: timestampSchema,
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const bankDetailsSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -59,8 +61,7 @@ export const bankDetailsSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 export const clientSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -74,7 +75,7 @@ export const clientSchema = z.object({
   city: z.string().max(100).optional(),
   county: z.string().max(100).optional(),
   postcode: z.string().max(20).optional(),
-  country: z.string().max(100).default('United Kingdom'),
+  country: z.string().max(100).default("United Kingdom"),
   vatNumber: z.string().max(20).optional(),
   paymentTerms: z.number().int().min(0).default(30),
   notes: z.string().optional(),
@@ -83,8 +84,7 @@ export const clientSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 export const invoiceSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -98,7 +98,9 @@ export const invoiceSchema = z.object({
   vatRate: positiveNumberSchema.default(20),
   vatAmount: positiveNumberSchema.default(0),
   totalAmount: positiveNumberSchema.default(0),
-  status: z.enum(['draft', 'sent', 'paid', 'overdue', 'cancelled']).default('draft'),
+  status: z
+    .enum(["draft", "sent", "paid", "overdue", "cancelled"])
+    .default("draft"),
   isPaid: booleanIntSchema.default(0),
   paymentMethod: z.string().max(50).optional(),
   notes: z.string().optional(),
@@ -112,8 +114,7 @@ export const invoiceSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 export const workItemSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -128,16 +129,15 @@ export const workItemSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 const incomeCategories = [
-  'turnover',
-  'other_business_income',
-  'uk_property_non_fhl_income',
-  'foreign_property_fhl_eea_income',
-  'foreign_property_fhl_non_eea_income'
-] as const;
+  "turnover",
+  "other_business_income",
+  "uk_property_non_fhl_income",
+  "foreign_property_fhl_eea_income",
+  "foreign_property_fhl_non_eea_income",
+] as const
 
 export const incomeSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -147,7 +147,7 @@ export const incomeSchema = z.object({
   amount: positiveNumberSchema,
   description: z.string().optional(),
   dateReceived: dateStringSchema,
-  category: z.enum(incomeCategories).default('turnover'),
+  category: z.enum(incomeCategories).default("turnover"),
   customerReference: z.string().max(100).optional(),
   receiptPath: z.string().max(500).optional(),
   vatAmount: positiveNumberSchema.default(0),
@@ -159,27 +159,26 @@ export const incomeSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 const expenseCategories = [
-  'cost_of_goods_sold',
-  'construction_industry_scheme',
-  'staff_costs',
-  'travel_costs',
-  'motor_expenses',
-  'premises_running_costs',
-  'maintenance_costs',
-  'admin_costs',
-  'business_entertainment_costs',
-  'advertising_costs',
-  'interest_on_bank_other_loans',
-  'financial_charges',
-  'bad_debt',
-  'professional_fees',
-  'depreciation_costs',
-  'other_expenses'
-] as const;
+  "cost_of_goods_sold",
+  "construction_industry_scheme",
+  "staff_costs",
+  "travel_costs",
+  "motor_expenses",
+  "premises_running_costs",
+  "maintenance_costs",
+  "admin_costs",
+  "business_entertainment_costs",
+  "advertising_costs",
+  "interest_on_bank_other_loans",
+  "financial_charges",
+  "bad_debt",
+  "professional_fees",
+  "depreciation_costs",
+  "other_expenses",
+] as const
 
 export const expenseSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -201,7 +200,7 @@ export const expenseSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const transactionSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -209,7 +208,7 @@ export const transactionSchema = z.object({
   amount: z.number(),
   description: z.string().optional(),
   transactionDate: dateStringSchema,
-  type: z.enum(['income', 'expense']),
+  type: z.enum(["income", "expense"]),
   category: z.string().max(100).optional(),
   subcategory: z.string().max(100).optional(),
   invoiceId: z.number().int().positive().optional(),
@@ -223,7 +222,7 @@ export const transactionSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const quarterlySubmissionSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -231,7 +230,9 @@ export const quarterlySubmissionSchema = z.object({
   businessId: z.string().max(50),
   taxYear: z.string().max(10),
   quarter: z.number().int().min(1).max(4),
-  status: z.enum(['draft', 'submitted', 'accepted', 'rejected']).default('draft'),
+  status: z
+    .enum(["draft", "submitted", "accepted", "rejected"])
+    .default("draft"),
   submissionDate: dateStringSchema,
   hmrcReceiptId: z.string().max(100).optional(),
   totalIncome: positiveNumberSchema.default(0),
@@ -245,7 +246,7 @@ export const quarterlySubmissionSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const niContributionSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -272,13 +273,15 @@ export const niContributionSchema = z.object({
   hmrcReference: z.string().max(100).optional(),
   submissionDate: dateStringSchema,
   isSubmitted: booleanIntSchema.default(0),
-  status: z.enum(['calculated', 'submitted', 'paid', 'overdue']).default('calculated'),
+  status: z
+    .enum(["calculated", "submitted", "paid", "overdue"])
+    .default("calculated"),
   notes: z.string().optional(),
   createdAt: timestampSchema,
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const incomeTaxCalculationSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -306,13 +309,15 @@ export const incomeTaxCalculationSchema = z.object({
   hmrcReference: z.string().max(100).optional(),
   submissionDate: dateStringSchema,
   isSubmitted: booleanIntSchema.default(0),
-  status: z.enum(['calculated', 'submitted', 'paid', 'overdue']).default('calculated'),
+  status: z
+    .enum(["calculated", "submitted", "paid", "overdue"])
+    .default("calculated"),
   notes: z.string().optional(),
   createdAt: timestampSchema,
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const paymentOnAccountSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -331,13 +336,15 @@ export const paymentOnAccountSchema = z.object({
   isPaid: booleanIntSchema.default(0),
   hmrcReference: z.string().max(100).optional(),
   isSubmitted: booleanIntSchema.default(0),
-  status: z.enum(['due', 'paid', 'overdue', 'reduced', 'cancelled']).default('due'),
+  status: z
+    .enum(["due", "paid", "overdue", "reduced", "cancelled"])
+    .default("due"),
   notes: z.string().optional(),
   createdAt: timestampSchema,
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
 export const taxRateSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -363,8 +370,7 @@ export const taxRateSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
+})
 
 export const fileAttachmentSchema = z.object({
   id: z.number().int().positive().optional(),
@@ -384,21 +390,18 @@ export const fileAttachmentSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
-
-
-
+})
 
 export const appSettingSchema = z.object({
   id: z.number().int().positive().optional(),
   userId: z.number().int().positive(),
   defaultPaymentTerms: z.number().int().min(0).default(30),
   defaultVatRate: positiveNumberSchema.default(20),
-  invoicePrefix: z.string().max(10).default('INV'),
+  invoicePrefix: z.string().max(10).default("INV"),
   nextInvoiceNumber: z.number().int().positive().default(1),
-  currency: z.string().length(3).default('GBP'),
-  dateFormat: z.string().max(20).default('DD/MM/YYYY'),
-  numberFormat: z.string().max(20).default('en-GB'),
+  currency: z.string().length(3).default("GBP"),
+  dateFormat: z.string().max(20).default("DD/MM/YYYY"),
+  numberFormat: z.string().max(20).default("en-GB"),
   autoCalculateQuarters: booleanIntSchema.default(1),
   mtdReminderEnabled: booleanIntSchema.default(1),
   mtdReminderDays: z.number().int().min(1).default(7),
@@ -408,22 +411,21 @@ export const appSettingSchema = z.object({
   updatedAt: timestampSchema,
   isSynced: z.boolean().default(false),
   lastSyncedAt: z.string().optional(),
-});
+})
 
-
-export type User = z.infer<typeof userSchema>;
-export type BusinessDetail = z.infer<typeof businessDetailsSchema>;
-export type Client = z.infer<typeof clientSchema>;
-export type Invoice = z.infer<typeof invoiceSchema>;
-export type WorkItem = z.infer<typeof workItemSchema>;
-export type Income = z.infer<typeof incomeSchema>;
-export type Expense = z.infer<typeof expenseSchema>;
-export type Transaction = z.infer<typeof transactionSchema>;
-export type QuarterlySubmission = z.infer<typeof quarterlySubmissionSchema>;
-export type NiContribution = z.infer<typeof niContributionSchema>;
-export type IncomeTaxCalculation = z.infer<typeof incomeTaxCalculationSchema>;
-export type PaymentOnAccount = z.infer<typeof paymentOnAccountSchema>;
-export type TaxRate = z.infer<typeof taxRateSchema>;
-export type BankDetail = z.infer<typeof bankDetailsSchema>;
-export type FileAttachment = z.infer<typeof fileAttachmentSchema>;
-export type AppSetting = z.infer<typeof appSettingSchema>;
+export type User = z.infer<typeof userSchema>
+export type BusinessDetail = z.infer<typeof businessDetailsSchema>
+export type Client = z.infer<typeof clientSchema>
+export type Invoice = z.infer<typeof invoiceSchema>
+export type WorkItem = z.infer<typeof workItemSchema>
+export type Income = z.infer<typeof incomeSchema>
+export type Expense = z.infer<typeof expenseSchema>
+export type Transaction = z.infer<typeof transactionSchema>
+export type QuarterlySubmission = z.infer<typeof quarterlySubmissionSchema>
+export type NiContribution = z.infer<typeof niContributionSchema>
+export type IncomeTaxCalculation = z.infer<typeof incomeTaxCalculationSchema>
+export type PaymentOnAccount = z.infer<typeof paymentOnAccountSchema>
+export type TaxRate = z.infer<typeof taxRateSchema>
+export type BankDetail = z.infer<typeof bankDetailsSchema>
+export type FileAttachment = z.infer<typeof fileAttachmentSchema>
+export type AppSetting = z.infer<typeof appSettingSchema>
