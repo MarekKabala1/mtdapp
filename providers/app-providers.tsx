@@ -1,4 +1,4 @@
-import { TanstackQueryProvider } from '@/db/tanstack-query/provider';
+import { TanstackQueryProvider } from '@/lib/tanstack-query/provider';
 import React from 'react';
 import { ThemeProvider } from './theme-provider';
 
